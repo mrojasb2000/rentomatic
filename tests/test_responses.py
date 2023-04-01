@@ -1,4 +1,4 @@
-from rentomatic.responses import ResponseSucess
+from rentomatic.responses import ResponseSuccess
 
 def test_response_success_is_true():
-    assert bool(ResponseSucess()) is True
+    assert bool(ResponseSuccess()) is True

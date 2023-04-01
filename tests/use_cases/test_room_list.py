@@ -4,8 +4,11 @@ from unittest import mock
 
 from  rentomatic.domain.room  import  Room 
 from  rentomatic.use_cases.room_list  import  room_list_use_case 
+from rentomatic.requests.room_list import RoomListRequest
 
-@pytest . fixture
+
+
+@pytest.fixture
 def domain_rooms():
     room_1 = Room(
        code=uuid.uuid4(),
@@ -45,10 +48,13 @@ def test_list_rooms_without_params(domain_rooms):
    repo = mock.Mock()
    repo.list.return_value = domain_rooms
    
-   # Initialize the use case with the repository and execute it. 
-   result = room_list_use_case(repo)
+   request = RoomListRequest()
+
+   response = room_list_use_case(repo, request)
+
+   assert bool(response) is True
    
    # Check is that the repository method was called without any params.
    repo.list.assert_called_with()
 
-   assert result == domain_rooms
+   assert response.value == domain_rooms
