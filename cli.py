@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from  rentomatic.repository.memrepo  import  MemRepo 
-from  rentomatic.use_cases.room_list  import  room_list_use_case
+from rentomatic.repository.memrepo  import  MemRepo 
+from rentomatic.use_cases.room_list  import  room_list_use_case
 from rentomatic.requests.room_list import build_room_list_request
 
 
