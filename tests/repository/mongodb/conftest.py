@@ -6,8 +6,8 @@ def mg_database_empty(app_configuration):
     client = pymongo.MongoClient(
         host=app_configuration["MONGODB_HOSTNAME"],
         port=int(app_configuration["MONGODB_PORT"]),
-        username=app_configuration["MONGOSB_USER"],
-        password=app_configuration["MONGOSB_PASSWORD"],
+        username=app_configuration["MONGODB_USER"],
+        password=app_configuration["MONGODB_PASSWORD"],
         authSource="admin",
     )
     db = client[app_configuration["APPLICATION_DB"]]
