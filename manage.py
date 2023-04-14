@@ -16,6 +16,7 @@ def setenv(variable, default):
     os.environ[variable] = os.getenv(variable, default)
 
 setenv("APPLICATION_CONFIG", "production")
+
 APPLICATION_CONFIG_PATH = "config"
 DOCKER_PATH = "docker"
 
